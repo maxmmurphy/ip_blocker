@@ -1,3 +1,9 @@
+# IpBlocker middleware for rack applications to return a 403 to blocked ip addresses.
+#
+# usage:
+#
+# <tt> IpBlocker, :ips_to_block => ["1.2.3.4", "0.0.0.0", "127.0.0.1"] </tt>
+
 class IpBlocker
 
   # initialize with :ips_to_block as an array, all IP addresses in this array will be blocked
@@ -5,7 +11,8 @@ class IpBlocker
      @app = app
      @ips_to_block = options[:ips_to_block]
    end
-
+  
+   # call only if ip is not blocked
    def call(env)
      if ip_blocked?(env["REMOTE_ADDR"])
        [403, {"Content-Type" => "text/html"}, ["<h1>403 Forbidden</h1>"]]

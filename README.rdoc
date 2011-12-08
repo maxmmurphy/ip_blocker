@@ -1,0 +1,1 @@
+IpBlocker is a small rack middleware to block ip addresses defined in an array. In fact, the only feature this middleware has is to block ip addresses and return a 403 Forbidden response.
