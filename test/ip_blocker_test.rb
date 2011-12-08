@@ -1,5 +1,5 @@
 require 'test/unit'
-require File.join('./', File.dirname(__FILE__), '../' ,'lib/ip_blocker.rb')
+require File.join(File.dirname(__FILE__), '../' ,'lib/ip_blocker.rb')
 
 class App
 
