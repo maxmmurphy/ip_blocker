@@ -1,6 +1,7 @@
 class IpBlocker
 
-  def initialize(app, options = {})
+  # initialize with :ips_to_block as an array, all IP addresses in this array will be blocked
+  def initialize(app, options = {:ips_to_block => []})
      @app = app
      @ips_to_block = options[:ips_to_block]
    end
